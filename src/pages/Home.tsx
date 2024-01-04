@@ -93,6 +93,7 @@ const Home = () => {
       localStorage.setItem('theme', 'dark');
       document.documentElement.classList.add('dark');
     }
+    setIsMenuOpen(false)
   }
 
   const showMore = () => {
@@ -117,55 +118,59 @@ const Home = () => {
   return (
     <div className={`w-full h-screen flex flex-col gap-3 sm:gap-4 bg-slate-100 dark:bg-slate-900 py-4 px-2 sm:px-4`}>
 
-      <div className='w-full h-full zIndex10'>
+      <div className='relative w-full h-full zIndex10'>
         {animation && <ParticlesComponent particlesType={animation} />}
       </div>
 
-      <header className="relative zIndex10 div-row gap-8 sm:gap-16 mx-4 sm:mx-8">
-        <div className="flex-1 flex sm:pr-8">
-          <Lottie onClick={clickOnLottie} className={`animated swing h-44 self-end opacity-95' ${showAnimation1 && 'infinite'} ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} animationData={animLottie} loop={true} />
+      <header
+        className={`zIndex10 div-row gap-8 sm:gap-16 mx-4 sm:mx-8 ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`}>
+        <div
+          onClick={() => setIsMenuOpen(false)}
+          className="flex-1 flex sm:pr-8">
+          <Lottie onClick={clickOnLottie} className={`animated swing h-44 self-end opacity-95' ${showAnimation1 && 'infinite'}`} animationData={animLottie} loop={true} />
         </div>
-        <img onClick={clickOnLogo} className={`animated tada w-44 h-44 self-start opacity-95 ${showAnimation2 && 'infinite'} ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} src={logo} alt="meditation application" />
-        <div className="animated zoomIn self-start mt-2" onClick={showMore}>
+        <img onClick={clickOnLogo} className={`animated tada w-44 h-44 self-start opacity-95 ${showAnimation2 && 'infinite'}`} src={logo} alt="meditation application" />
+        <div
+          onClick={showMore}
+          className="animated zoomIn self-start mt-2">
           <IoMdMore className='bg-action' />
         </div>
-
-        <div className={`zIndex30 absolute top-16 left-14 rounded-2xl rounded-tr-md rounded-bl-md px-6 py-4 bg-slate-300 dark:bg-slate-700 ${isMenuOpen ? 'block' : 'hidden'} transition duration-100`}>
-          <ul className="list-none flex flex-col gap-4 items-end justify-center">
-            <li>
-              <div onClick={changeTheme} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
-                <div className="hidden dark:block">
-                  <WiDaySunny />
-                </div>
-                <div className="block dark:hidden">
-                  <MdOutlineNightlight />
-                </div>
-                <p className="h3 hidden dark:block">Light</p>
-                <p className="h3 block dark:hidden">Dark</p>
-              </div>
-            </li>
-            <li>
-              <div onClick={() => setAnimationBackground(ParticlesType.Stars)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
-                <FaStar />
-                <p className="h3">Star</p>
-              </div>
-            </li>
-            <li>
-              <div onClick={() => setAnimationBackground(ParticlesType.Snow)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
-                <FaRegSnowflake />
-                <p className="h3">Snow</p>
-              </div>
-            </li>
-            <li>
-              <div onClick={() => setAnimationBackground(null)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
-                <MdOutlineClear />
-                <p className="h3">Clear Animation</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
       </header>
+
+      <div className={`zIndex30 absolute top-24 left-20 rounded-2xl rounded-tr-md rounded-bl-md px-6 py-4 bg-slate-300 dark:bg-slate-700 ${isMenuOpen ? 'block' : 'hidden'} transition duration-100`}>
+        <ul className="list-none flex flex-col gap-4 items-end justify-center">
+          <li>
+            <div onClick={changeTheme} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
+              <div className="hidden dark:block">
+                <WiDaySunny />
+              </div>
+              <div className="block dark:hidden">
+                <MdOutlineNightlight />
+              </div>
+              <p className="h3 hidden dark:block">Light</p>
+              <p className="h3 block dark:hidden">Dark</p>
+            </div>
+          </li>
+          <li>
+            <div onClick={() => setAnimationBackground(ParticlesType.Stars)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
+              <FaStar />
+              <p className="h3">Star</p>
+            </div>
+          </li>
+          <li>
+            <div onClick={() => setAnimationBackground(ParticlesType.Snow)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
+              <FaRegSnowflake />
+              <p className="h3">Snow</p>
+            </div>
+          </li>
+          <li>
+            <div onClick={() => setAnimationBackground(null)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
+              <MdOutlineClear />
+              <p className="h3">Clear Animation</p>
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <Zoom className={`zIndex20 ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} triggerOnce={true} cascade>
         <main

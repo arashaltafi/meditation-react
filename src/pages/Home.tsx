@@ -250,7 +250,7 @@ const Home = () => {
           </div>
           <input type="range" />
         </div>
-        
+
       </main>
     </div>
   )

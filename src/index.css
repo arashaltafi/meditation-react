@@ -146,26 +146,26 @@
   }
 
   .bg-item {
-    @apply flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 py-4 px-4 rounded-xl transition-all duration-100 delay-75 ease-in select-none;
+    @apply flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 py-4 px-4 rounded-xl transition-all duration-100 delay-75 ease-in cursor-pointer;
 
     box-shadow: 1px 1px 10px #737373, -1px -1px 10px #adadad;
 
     &:hover {
-      box-shadow: -5px -5px 10px #737373, 5px 5px 10px #adadad;
+      box-shadow: -3px -3px 10px #737373, 3px 3px 10px #adadad;
       transform: scale(101%);
     }
 
-    /* &:active {
+    &:active {
       box-shadow: 2px 2px 10px #737373, -2px -2px 10px #adadad;
       transform: scale(99%);
-    } */
+    }
   }
 
 
   input[type=range] {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
+    width: 80%;
     height: 10px;
     border-radius: 8px;
     outline: none;

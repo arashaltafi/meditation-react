@@ -21,6 +21,7 @@ export default {
       },
     },
   },
+  darkMode: "class",
   plugins: [
     function ({ addVariant }) {
       addVariant("child", "& > *")

@@ -4,7 +4,6 @@ import { useLocation } from "react-router";
 import locationSlice from "../redux/locationSlice";
 import { MdOutlineNightlight } from "react-icons/md";
 import { WiDaySunny } from "react-icons/wi";
-import { MdLanguage } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
 import { FaRegSnowflake } from "react-icons/fa";
 import { MdOutlineClear } from "react-icons/md";
@@ -125,12 +124,24 @@ const Home = () => {
       <header className="zIndex10 div-row mx-4">
         <Lottie onClick={clickOnLottie} className={`animated swing flex-1 opacity-95' ${showAnimation1 && 'infinite'} ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} animationData={animLottie} loop={true} />
         <img onClick={clickOnLogo} className={`animated tada w-44 h-44 self-start opacity-95 ${showAnimation2 && 'infinite'} ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} src={logo} alt="meditation application" />
-        <div className="animated zoomInDown self-start mt-2" onClick={showMore}>
+        <div className="animated zoomIn self-start mt-2" onClick={showMore}>
           <IoMdMore className='bg-action' />
         </div>
 
         <div className={`zIndex30 absolute top-16 left-14 rounded-2xl rounded-tr-md rounded-bl-md px-6 py-4 bg-slate-300 dark:bg-slate-700 ${isMenuOpen ? 'block' : 'hidden'} transition duration-100`}>
           <ul className="list-none flex flex-col gap-4 items-end justify-center">
+            <li>
+              <div onClick={changeTheme} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
+                <div className="hidden dark:block">
+                  <WiDaySunny />
+                </div>
+                <div className="block dark:hidden">
+                  <MdOutlineNightlight />
+                </div>
+                <p className="h3 hidden dark:block">Light</p>
+                <p className="h3 block dark:hidden">Dark</p>
+              </div>
+            </li>
             <li>
               <div onClick={() => setAnimationBackground(ParticlesType.Stars)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
                 <FaStar />

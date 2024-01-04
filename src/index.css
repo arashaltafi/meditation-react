@@ -34,7 +34,7 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-1 hidden sm:block;
+    @apply hidden;
   }
 
   ::-webkit-scrollbar-track {

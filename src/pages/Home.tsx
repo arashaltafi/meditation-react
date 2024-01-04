@@ -18,41 +18,58 @@ import animLottie from "../Assets/lottie/wave_motion.json";
 import logo from "../Assets/images/create_without_back.png";
 import bird from "../Assets/images/bird_grey.png";
 import birdSelected from "../Assets/images/bird_tor.png";
+import birdAudio from "/assets/audio/birds_sound.ogg";
 import bowl from "../Assets/images/bowl_grey.png";
 import bowlSelected from "../Assets/images/bowl_tor.png";
+import bowlAudio from "/assets/audio/singing_bowl.ogg";
 import cat from "../Assets/images/cat_grey.png";
 import catSelected from "../Assets/images/cat_tor.png";
+import catAudio from "/assets/audio/cat_purr_sound.ogg";
 import fire from "../Assets/images/fire_grey.png";
 import fireSelected from "../Assets/images/fire_tor.png";
+import fireAudio from "/assets/audio/fire_sound.ogg"
 import flow from "../Assets/images/flow_grey.png";
 import flowSelected from "../Assets/images/flow_tor.png";
+import flowAudio from "/assets/audio/flow_sound.ogg"
 import flute from "../Assets/images/flute_grey.png";
 import fluteSelected from "../Assets/images/flute_tor.png";
+import fluteAudio from "/assets/audio/flute_sound.ogg"
 import grass from "../Assets/images/grass_grey.png";
 import grassSelected from "../Assets/images/grass_tor.png";
+import grassAudio from "/assets/audio/grass_sound.ogg"
 import harp from "../Assets/images/harp_grey.png";
 import harpSelected from "../Assets/images/harp_tor.png";
+import harpAudio from "/assets/audio/harp_sound.ogg"
 import keyborad from "../Assets/images/keyboard_grey.png";
 import keyboradSelected from "../Assets/images/keyboard_tor.png";
+import keyboradAudio from "/assets/audio/keyboard_sound.ogg"
 import musicalNote from "../Assets/images/musical_note_grey.png";
 import musicalNoteSelected from "../Assets/images/musical_note_tor.png";
+import musicalNoteAudio from "/assets/audio/music_sound.ogg"
 import ocean from "../Assets/images/ocean_grey.png";
 import oceanSelected from "../Assets/images/ocean_tor.png";
+import oceanAudio from "/assets/audio/ocean_sound.ogg"
 import om from "../Assets/images/om_grey.png";
 import omSelected from "../Assets/images/om_tor.png";
+import omAudio from "/assets/audio/om_sound.ogg"
 import piano from "../Assets/images/piano_grey.png";
 import pianoSelected from "../Assets/images/piano_tor.png";
+import pianoAudio from "/assets/audio/piano_sound.ogg"
 import railway from "../Assets/images/railway_grey.png";
 import railwaySelected from "../Assets/images/railway_tor.png";
+import railwayAudio from "/assets/audio/rail_sound.ogg"
 import rainy from "../Assets/images/rainy_grey.png";
 import rainySelected from "../Assets/images/rainy_tor.png";
+import rainyAudio from "/assets/audio/rain_sound.ogg"
 import tabla from "../Assets/images/tabla_grey.png";
 import tablaSelected from "../Assets/images/tabla_tor.png";
+import tablaAudio from "/assets/audio/tabla_sound.ogg"
 import thunder from "../Assets/images/thunder_grey.png";
 import thunderSelected from "../Assets/images/thunder_tor.png";
-import thunderAudio from "../Assets/audio/thunder_sound.ogg"
+import thunderAudio from "/assets/audio/thunder_sound.ogg"
 import wind from "../Assets/images/wind_grey.png";
 import windSelected from "../Assets/images/wind_tor.png";
+import windAudio from "/assets/audio/wind_sound.ogg"
 import AudioItems from "../Components/AudioItems";
 
 const Home = () => {
@@ -134,119 +151,39 @@ const Home = () => {
 
       <main className="w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">
 
-      <AudioItems audioUrl={thunderAudio} imageUrl={thunder} />
+        <AudioItems styles="col-start-1 col-end-3" audioUrl={thunderAudio} imageUrl={thunder} />
 
-        <div className="col-start-3 col-end-5 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={rainy} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-3 col-end-5" audioUrl={rainyAudio} imageUrl={rainy} />
 
-        <div className="col-start-5 col-end-7 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={keyborad} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-5 col-end-7" audioUrl={keyboradAudio} imageUrl={keyborad} />
 
-        <div className="col-start-1 col-end-3 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={musicalNote} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-1 col-end-3" audioUrl={musicalNoteAudio} imageUrl={musicalNote} />
 
-        <div className="col-start-3 col-end-5 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={wind} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-3 col-end-5" audioUrl={windAudio} imageUrl={wind} />
 
-        <div className="col-start-5 col-end-7 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={ocean} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-5 col-end-7" audioUrl={oceanAudio} imageUrl={ocean} />
 
-        <div className="col-start-1 col-end-3 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={grass} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-1 col-end-3" audioUrl={grassAudio} imageUrl={grass} />
 
-        <div className="col-start-3 col-end-5 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={flute} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-3 col-end-5" audioUrl={fluteAudio} imageUrl={flute} />
 
-        <div className="col-start-5 col-end-7 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={piano} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-5 col-end-7" audioUrl={pianoAudio} imageUrl={piano} />
 
-        <div className="col-start-1 col-end-3 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={harp} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-1 col-end-3" audioUrl={harpAudio} imageUrl={harp} />
 
-        <div className="col-start-3 col-end-5 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={bird} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-3 col-end-5" audioUrl={birdAudio} imageUrl={bird} />
 
-        <div className="col-start-5 col-end-7 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={bowl} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-5 col-end-7" audioUrl={bowlAudio} imageUrl={bowl} />
 
-        <div className="col-start-1 col-end-3 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={cat} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-1 col-end-3" audioUrl={catAudio} imageUrl={cat} />
 
-        <div className="col-start-3 col-end-5 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={railway} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-3 col-end-5" audioUrl={railwayAudio} imageUrl={railway} />
 
-        <div className="col-start-5 col-end-7 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={om} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-5 col-end-7" audioUrl={omAudio} imageUrl={om} />
 
-        <div className="col-start-1 col-end-4 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={tabla} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-1 col-end-4" audioUrl={tablaAudio} imageUrl={tabla} />
 
-        <div className="col-start-4 col-end-7 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={fire} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+        <AudioItems styles="col-start-4 col-end-7" audioUrl={fireAudio} imageUrl={fire} />
 
       </main>
     </div>

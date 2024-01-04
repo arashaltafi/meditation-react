@@ -7,7 +7,6 @@ import { WiDaySunny } from "react-icons/wi";
 import { FaStar } from "react-icons/fa6";
 import { FaRegSnowflake } from "react-icons/fa";
 import { MdOutlineClear } from "react-icons/md";
-import { Zoom } from "react-awesome-reveal";
 import { IoMdMore } from "react-icons/io";
 import Lottie from "lottie-react";
 import animLottie from "../Assets/lottie/wave_motion.json";

@@ -127,9 +127,9 @@ const Home = () => {
         <div
           onClick={() => setIsMenuOpen(false)}
           className="flex-1 flex sm:pr-8">
-          <Lottie onClick={clickOnLottie} className={`animated swing h-44 self-end opacity-95' ${showAnimation1 && 'infinite'}`} animationData={animLottie} loop={true} />
+          <Lottie onClick={clickOnLottie} className={`animated swing h-44 self-end opacity-100 dark:opacity-95' ${showAnimation1 && 'infinite'}`} animationData={animLottie} loop={true} />
         </div>
-        <img onClick={clickOnLogo} className={`animated tada w-44 h-44 self-start opacity-95 ${showAnimation2 && 'infinite'}`} src={logo} alt="meditation application" />
+        <img onClick={clickOnLogo} className={`animated tada w-44 h-44 self-start opacity-100 dark:opacity-95 ${showAnimation2 && 'infinite'}`} src={logo} alt="meditation application" />
         <div
           onClick={showMore}
           className="animated zoomIn self-start mt-2">

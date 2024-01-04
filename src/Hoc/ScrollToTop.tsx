@@ -33,16 +33,10 @@ const ScrollToTop = () => {
         let title = '';
         switch (location.pathname) {
             case '/':
-                title = 'BMI Application';
-                break;
-            case '/info':
-                title = 'Info BMI';
-                break;
-            case '/result':
-                title = 'Result BMI';
+                title = 'Meditation';
                 break;
             default:
-                title = 'BMI Application';
+                title = 'Meditation';
                 break;
         }
         document.title = title

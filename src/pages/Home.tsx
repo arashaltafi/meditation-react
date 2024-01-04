@@ -5,6 +5,9 @@ import locationSlice from "../redux/locationSlice";
 import { MdOutlineNightlight } from "react-icons/md";
 import { WiDaySunny } from "react-icons/wi";
 import { MdLanguage } from "react-icons/md";
+import { FaStar } from "react-icons/fa6";
+import { FaRegSnowflake } from "react-icons/fa";
+import { MdOutlineClear } from "react-icons/md";
 import { Zoom } from "react-awesome-reveal";
 import { IoMdMore } from "react-icons/io";
 import Lottie from "lottie-react";
@@ -70,6 +73,8 @@ const Home = () => {
   const dispatch = useDispatch();
   const [showAnimation1, setShowAnimation1] = useState<boolean>(false);
   const [showAnimation2, setShowAnimation2] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [animation, setAnimation] = useState<ParticlesType | null>(ParticlesType.Stars);
 
   useEffect(() => {
     dispatch(locationSlice.actions.addLocation([{
@@ -92,26 +97,67 @@ const Home = () => {
   }
 
   const showMore = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
 
+  const setAnimationBackground = (anim: ParticlesType | null) => {
+    setAnimation(anim)
+    showMore()
+  }
+
+  const clickOnLottie = () => {
+    setShowAnimation1(!showAnimation1)
+    setIsMenuOpen(false)
+  }
+
+  const clickOnLogo = () => {
+    setShowAnimation2(!showAnimation2)
+    setIsMenuOpen(false)
   }
 
   return (
-    <div className="w-full h-screen flex flex-col gap-3 sm:gap-4 bg-slate-100 dark:bg-slate-900 py-4 px-2 sm:px-4">
+    <div className={`w-full h-screen flex flex-col gap-3 sm:gap-4 bg-slate-100 dark:bg-slate-900 py-4 px-2 sm:px-4`}>
 
       <div className='w-full h-full zIndex10'>
-        <ParticlesComponent particlesType={ParticlesType.Stars} />
+        {animation && <ParticlesComponent particlesType={animation} />}
       </div>
 
       <header className="zIndex10 div-row mx-4">
-        <Lottie onClick={() => setShowAnimation1(!showAnimation1)} className={`animated swing flex-1 opacity-95' ${showAnimation1 && 'infinite'}`} animationData={animLottie} loop={true} />
-        <img onClick={() => setShowAnimation2(!showAnimation2)} className={`animated tada w-44 h-44 self-start opacity-95 ${showAnimation2 && 'infinite'}`} src={logo} alt="meditation application" />
+        <Lottie onClick={clickOnLottie} className={`animated swing flex-1 opacity-95' ${showAnimation1 && 'infinite'} ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} animationData={animLottie} loop={true} />
+        <img onClick={clickOnLogo} className={`animated tada w-44 h-44 self-start opacity-95 ${showAnimation2 && 'infinite'} ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} src={logo} alt="meditation application" />
         <div className="animated zoomInDown self-start mt-2" onClick={showMore}>
           <IoMdMore className='bg-action' />
         </div>
+
+        <div className={`zIndex30 absolute top-16 left-14 rounded-2xl rounded-tr-md rounded-bl-md px-6 py-4 bg-slate-300 dark:bg-slate-700 ${isMenuOpen ? 'block' : 'hidden'} transition duration-100`}>
+          <ul className="list-none flex flex-col gap-4 items-end justify-center">
+            <li>
+              <div onClick={() => setAnimationBackground(ParticlesType.Stars)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
+                <FaStar />
+                <p className="h3">Star</p>
+              </div>
+            </li>
+            <li>
+              <div onClick={() => setAnimationBackground(ParticlesType.Snow)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
+                <FaRegSnowflake />
+                <p className="h3">Snow</p>
+              </div>
+            </li>
+            <li>
+              <div onClick={() => setAnimationBackground(null)} className="flex flex-row items-center justify-center gap-2 cursor-pointer">
+                <MdOutlineClear />
+                <p className="h3">Clear Animation</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
       </header>
 
-      <Zoom triggerOnce={true} cascade>
-        <main className="zIndex20 w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">
+      <Zoom className={`zIndex20 ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} triggerOnce={true} cascade>
+        <main
+          onClick={() => setIsMenuOpen(false)}
+          className="w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">
 
           <AudioItems styles="col-start-1 col-end-3" audioUrl={thunderAudio} imageUrl={thunder} imageSelectedUrl={thunderSelected} />
 

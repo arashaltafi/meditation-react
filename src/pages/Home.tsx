@@ -88,12 +88,18 @@ const Home = () => {
     }
   }
 
+  const showMore = () => {
+
+  }
+
   return (
     <div className="w-full h-screen flex flex-col gap-3 sm:gap-4 bg-slate-100 dark:bg-slate-900 py-4 px-2 sm:px-4">
       <header className="div-row mx-4">
         <Lottie className='flex-1 opacity-95' animationData={animLottie} loop={true} />
         <img className="w-44 h-44 self-start opacity-95" src={logo} alt="meditation application" />
-        <IoMdMore className='bg-action' />
+        <div className="self-start mt-2" onClick={showMore}>
+          <IoMdMore className='bg-action' />
+        </div>
       </header>
 
       <main className="w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">

@@ -120,7 +120,7 @@
   }
 
   .bg-action {
-    @apply w-8 h-8 sm:w-10 sm:h-10 self-start mt-2 transition delay-75 duration-200 cursor-pointer;
+    @apply w-8 h-8 sm:w-10 sm:h-10 transition delay-75 duration-200 cursor-pointer;
 
     &:hover {
       @apply text-slate-800 dark:text-slate-100 p-0.5 sm:p-1 rounded-full bg-gray-400 dark:bg-gray-700

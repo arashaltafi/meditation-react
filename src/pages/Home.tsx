@@ -116,7 +116,7 @@ const Home = () => {
   }
 
   return (
-    <div className={`w-full h-screen flex flex-col gap-3 sm:gap-4 bg-slate-100 dark:bg-slate-900 py-4 px-2 sm:px-4`}>
+    <div className={`w-full h-screen flex flex-col gap-3 sm:gap-4 bg-slate-200 dark:bg-slate-900 py-4 px-2 sm:px-4`}>
 
       <div className='relative w-full h-full zIndex10'>
         {animation && <ParticlesComponent particlesType={animation} />}

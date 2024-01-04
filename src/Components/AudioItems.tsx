@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { motion } from "framer-motion"
 
 interface AudioItemsProps {
     imageUrl: string,
@@ -25,12 +26,21 @@ const AudioItems = ({ imageUrl, imageSelectedUrl, audioUrl, styles }: AudioItems
     };
 
     return (
-        <div className={`${styles} flex flex-col gap-y-6 sm:gap-y-8 items-center justify-center`}>
-            <div onClick={toggleSound} className="bg-item">
-                <img src={`${isPlaying ? imageSelectedUrl : imageUrl}`} alt="bird sound" />
-            </div>
+
+        <div className={`${styles} flex flex-col gap-y-6 sm:gap-y-8 items-center justify-center animated fadeInDown`}>
+            <motion.button
+                whileHover={{
+                    scale: 1.1,
+                }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10, duration: 0.2, delay: 0 }}
+            >
+                <div onClick={toggleSound} className="bg-item">
+                    <img src={`${isPlaying ? imageSelectedUrl : imageUrl}`} alt="bird sound" />
+                </div>
+            </motion.button>
             <input
-                className={`${isPlaying ? 'block' : 'hidden'}`}
+                className={`${isPlaying ? 'visible' : 'invisible'}`}
                 min="0"
                 max="1"
                 step="0.1"

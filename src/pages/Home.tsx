@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router";
 import locationSlice from "../redux/locationSlice";
 import { MdOutlineNightlight } from "react-icons/md";
 import { WiDaySunny } from "react-icons/wi";
 import { MdLanguage } from "react-icons/md";
+import { Zoom } from "react-awesome-reveal";
 import { IoMdMore } from "react-icons/io";
 import Lottie from "lottie-react";
 import animLottie from "../Assets/lottie/wave_motion.json";
@@ -67,6 +68,8 @@ const Home = () => {
 
   const location = useLocation();
   const dispatch = useDispatch();
+  const [showAnimation1, setShowAnimation1] = useState<boolean>(false);
+  const [showAnimation2, setShowAnimation2] = useState<boolean>(false);
 
   useEffect(() => {
     dispatch(locationSlice.actions.addLocation([{
@@ -100,50 +103,52 @@ const Home = () => {
       </div>
 
       <header className="zIndex10 div-row mx-4">
-        <Lottie className='flex-1 opacity-95' animationData={animLottie} loop={true} />
-        <img className="w-44 h-44 self-start opacity-95" src={logo} alt="meditation application" />
-        <div className="self-start mt-2" onClick={showMore}>
+        <Lottie onClick={() => setShowAnimation1(!showAnimation1)} className={`animated swing flex-1 opacity-95' ${showAnimation1 && 'infinite'}`} animationData={animLottie} loop={true} />
+        <img onClick={() => setShowAnimation2(!showAnimation2)} className={`animated tada w-44 h-44 self-start opacity-95 ${showAnimation2 && 'infinite'}`} src={logo} alt="meditation application" />
+        <div className="animated zoomInDown self-start mt-2" onClick={showMore}>
           <IoMdMore className='bg-action' />
         </div>
       </header>
 
-      <main className="zIndex20 w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">
+      <Zoom triggerOnce={true} cascade>
+        <main className="zIndex20 w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">
 
-        <AudioItems styles="col-start-1 col-end-3" audioUrl={thunderAudio} imageUrl={thunder} imageSelectedUrl={thunderSelected} />
+          <AudioItems styles="col-start-1 col-end-3" audioUrl={thunderAudio} imageUrl={thunder} imageSelectedUrl={thunderSelected} />
 
-        <AudioItems styles="col-start-3 col-end-5" audioUrl={rainyAudio} imageUrl={rainy} imageSelectedUrl={rainySelected} />
+          <AudioItems styles="col-start-3 col-end-5" audioUrl={rainyAudio} imageUrl={rainy} imageSelectedUrl={rainySelected} />
 
-        <AudioItems styles="col-start-5 col-end-7" audioUrl={keyboardAudio} imageUrl={keyboard} imageSelectedUrl={keyboardSelected} />
+          <AudioItems styles="col-start-5 col-end-7" audioUrl={keyboardAudio} imageUrl={keyboard} imageSelectedUrl={keyboardSelected} />
 
-        <AudioItems styles="col-start-1 col-end-3" audioUrl={musicalNoteAudio} imageUrl={musicalNote} imageSelectedUrl={musicalNoteSelected} />
+          <AudioItems styles="col-start-1 col-end-3" audioUrl={musicalNoteAudio} imageUrl={musicalNote} imageSelectedUrl={musicalNoteSelected} />
 
-        <AudioItems styles="col-start-3 col-end-5" audioUrl={windAudio} imageUrl={wind} imageSelectedUrl={windSelected} />
+          <AudioItems styles="col-start-3 col-end-5" audioUrl={windAudio} imageUrl={wind} imageSelectedUrl={windSelected} />
 
-        <AudioItems styles="col-start-5 col-end-7" audioUrl={oceanAudio} imageUrl={ocean} imageSelectedUrl={oceanSelected} />
+          <AudioItems styles="col-start-5 col-end-7" audioUrl={oceanAudio} imageUrl={ocean} imageSelectedUrl={oceanSelected} />
 
-        <AudioItems styles="col-start-1 col-end-3" audioUrl={grassAudio} imageUrl={grass} imageSelectedUrl={grassSelected} />
+          <AudioItems styles="col-start-1 col-end-3" audioUrl={grassAudio} imageUrl={grass} imageSelectedUrl={grassSelected} />
 
-        <AudioItems styles="col-start-3 col-end-5" audioUrl={fluteAudio} imageUrl={flute} imageSelectedUrl={fluteSelected} />
+          <AudioItems styles="col-start-3 col-end-5" audioUrl={fluteAudio} imageUrl={flute} imageSelectedUrl={fluteSelected} />
 
-        <AudioItems styles="col-start-5 col-end-7" audioUrl={pianoAudio} imageUrl={piano} imageSelectedUrl={pianoSelected} />
+          <AudioItems styles="col-start-5 col-end-7" audioUrl={pianoAudio} imageUrl={piano} imageSelectedUrl={pianoSelected} />
 
-        <AudioItems styles="col-start-1 col-end-3" audioUrl={harpAudio} imageUrl={harp} imageSelectedUrl={harpSelected} />
+          <AudioItems styles="col-start-1 col-end-3" audioUrl={harpAudio} imageUrl={harp} imageSelectedUrl={harpSelected} />
 
-        <AudioItems styles="col-start-3 col-end-5" audioUrl={birdAudio} imageUrl={bird} imageSelectedUrl={birdSelected} />
+          <AudioItems styles="col-start-3 col-end-5" audioUrl={birdAudio} imageUrl={bird} imageSelectedUrl={birdSelected} />
 
-        <AudioItems styles="col-start-5 col-end-7" audioUrl={bowlAudio} imageUrl={bowl} imageSelectedUrl={bowlSelected} />
+          <AudioItems styles="col-start-5 col-end-7" audioUrl={bowlAudio} imageUrl={bowl} imageSelectedUrl={bowlSelected} />
 
-        <AudioItems styles="col-start-1 col-end-3" audioUrl={catAudio} imageUrl={cat} imageSelectedUrl={catSelected} />
+          <AudioItems styles="col-start-1 col-end-3" audioUrl={catAudio} imageUrl={cat} imageSelectedUrl={catSelected} />
 
-        <AudioItems styles="col-start-3 col-end-5" audioUrl={railwayAudio} imageUrl={railway} imageSelectedUrl={railwaySelected} />
+          <AudioItems styles="col-start-3 col-end-5" audioUrl={railwayAudio} imageUrl={railway} imageSelectedUrl={railwaySelected} />
 
-        <AudioItems styles="col-start-5 col-end-7" audioUrl={omAudio} imageUrl={om} imageSelectedUrl={omSelected} />
+          <AudioItems styles="col-start-5 col-end-7" audioUrl={omAudio} imageUrl={om} imageSelectedUrl={omSelected} />
 
-        <AudioItems styles="col-start-1 col-end-4" audioUrl={tablaAudio} imageUrl={tabla} imageSelectedUrl={tablaSelected} />
+          <AudioItems styles="col-start-1 col-end-4" audioUrl={tablaAudio} imageUrl={tabla} imageSelectedUrl={tablaSelected} />
 
-        <AudioItems styles="col-start-4 col-end-7" audioUrl={fireAudio} imageUrl={fire} imageSelectedUrl={fireSelected} />
+          <AudioItems styles="col-start-4 col-end-7" audioUrl={fireAudio} imageUrl={fire} imageSelectedUrl={fireSelected} />
 
-      </main>
+        </main>
+      </Zoom>
     </div>
   )
 }

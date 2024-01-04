@@ -123,7 +123,7 @@ const Home = () => {
       </div>
 
       <header
-        className={`zIndex10 div-row gap-8 sm:gap-16 mx-4 sm:mx-8 ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`}>
+        className={`zIndex10 div-row gap-4 sm:gap-8 md:gap-12 lg:gap-16 mx-4 sm:mx-8 ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`}>
         <div
           onClick={() => setIsMenuOpen(false)}
           className="flex-1 flex sm:pr-8">
@@ -137,7 +137,7 @@ const Home = () => {
         </div>
       </header>
 
-      <div className={`zIndex30 absolute top-24 left-20 rounded-2xl rounded-tr-md rounded-bl-md px-6 py-4 bg-slate-300 dark:bg-slate-700 ${isMenuOpen ? 'block' : 'hidden'} transition duration-100`}>
+      <div className={`zIndex30 absolute top-[4.25rem] left-[4.25rem] sm:top-20 sm:left-24 md:top-[5.5rem] md:left-24 lg:top-24 lg:left-24 xl:top-24 xl:left-24 rounded-2xl rounded-tr-md rounded-bl-md px-6 py-4 bg-slate-300 dark:bg-slate-700 ${isMenuOpen ? 'block' : 'hidden'} transition duration-100`}>
         <ul className="list-none flex flex-col gap-4 items-end justify-center">
           <li>
             <div onClick={changeTheme} className="flex flex-row items-center justify-center gap-2 cursor-pointer">

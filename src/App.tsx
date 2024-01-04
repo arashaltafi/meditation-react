@@ -13,6 +13,8 @@ const App = () => {
       document.documentElement.classList.add('dark');
     } else if (localStorage.getItem('theme') === 'light') {
       document.documentElement.classList.remove('dark')
+    } else {
+      document.documentElement.classList.add('dark');
     }
 
     setOrientation(window.orientation);

@@ -35,7 +35,7 @@ const AudioItems = ({ imageUrl, imageSelectedUrl, audioUrl, styles }: AudioItems
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20, duration: 0.2, delay: 0 }}
             >
-                <div onClick={toggleSound} className="bg-item">
+                <div onClick={toggleSound} className="bg-item w-64 h-64">
                     <img src={`${isPlaying ? imageSelectedUrl : imageUrl}`} alt="bird sound" />
                 </div>
             </motion.button>

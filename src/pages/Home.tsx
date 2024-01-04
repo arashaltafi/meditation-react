@@ -121,8 +121,10 @@ const Home = () => {
         {animation && <ParticlesComponent particlesType={animation} />}
       </div>
 
-      <header className="zIndex10 div-row mx-4">
-        <Lottie onClick={clickOnLottie} className={`animated swing flex-1 opacity-95' ${showAnimation1 && 'infinite'} ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} animationData={animLottie} loop={true} />
+      <header className="relative zIndex10 div-row gap-8 sm:gap-16 mx-4 sm:mx-8">
+        <div className="flex-1 flex sm:pr-8">
+          <Lottie onClick={clickOnLottie} className={`animated swing h-44 self-end opacity-95' ${showAnimation1 && 'infinite'} ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} animationData={animLottie} loop={true} />
+        </div>
         <img onClick={clickOnLogo} className={`animated tada w-44 h-44 self-start opacity-95 ${showAnimation2 && 'infinite'} ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} src={logo} alt="meditation application" />
         <div className="animated zoomIn self-start mt-2" onClick={showMore}>
           <IoMdMore className='bg-action' />

@@ -22,7 +22,7 @@ const App = () => {
   }, [])
 
   return (
-    <div className="w-full md:w-[70%] lg:w-1/2 xl:w-[50%] 2xl:w-[40%] h-screen mx-auto overflow-x-hidden ios-padding select-none">
+    <div className="w-full h-screen mx-auto overflow-x-hidden ios-padding select-none">
       {orientation ? (
         <p className="h1 w-full h-full flex items-center justify-center">Please Rotate Your Device To Portrait</p>
       ) : (

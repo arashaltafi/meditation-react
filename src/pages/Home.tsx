@@ -172,8 +172,8 @@ const Home = () => {
         </ul>
       </div>
 
-      <Zoom className={`zIndex20 ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`} triggerOnce={true} cascade>
-        <main
+      <main className={`zIndex20 ${isMenuOpen ? 'opacity-50' : 'opacity-100'}`}>
+        <div
           onClick={() => setIsMenuOpen(false)}
           className="w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">
 
@@ -211,8 +211,8 @@ const Home = () => {
 
           <AudioItems styles="col-start-4 col-end-7" audioUrl={fireAudio} imageUrl={fire} imageSelectedUrl={fireSelected} />
 
-        </main>
-      </Zoom>
+        </div>
+      </main>
     </div>
   )
 }

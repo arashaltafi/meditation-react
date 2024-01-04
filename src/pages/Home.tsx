@@ -5,7 +5,6 @@ import locationSlice from "../redux/locationSlice";
 import { MdOutlineNightlight } from "react-icons/md";
 import { WiDaySunny } from "react-icons/wi";
 import { MdLanguage } from "react-icons/md";
-import { useTranslation } from 'react-i18next';
 import { IoMdMore } from "react-icons/io";
 import Lottie from "lottie-react";
 import animLottie from "../Assets/lottie/wave_motion.json";
@@ -45,6 +44,7 @@ import thunderSelected from "../Assets/images/thunder_tor.png";
 import wind from "../Assets/images/wind_grey.png";
 import windSelected from "../Assets/images/wind_tor.png";
 import AudioItems from "../Components/AudioItems";
+import ParticlesComponent, { ParticlesType } from "../Components/ParticlesComponent";
 
 const Home = () => {
   const birdAudio = "https://meditation.arashaltafi.ir/audio_url/birds_sound.ogg";
@@ -89,12 +89,17 @@ const Home = () => {
   }
 
   const showMore = () => {
-      
+
   }
 
   return (
     <div className="w-full h-screen flex flex-col gap-3 sm:gap-4 bg-slate-100 dark:bg-slate-900 py-4 px-2 sm:px-4">
-      <header className="div-row mx-4">
+
+      <div className='w-full h-full zIndex10'>
+        <ParticlesComponent particlesType={ParticlesType.Stars} />
+      </div>
+
+      <header className="zIndex10 div-row mx-4">
         <Lottie className='flex-1 opacity-95' animationData={animLottie} loop={true} />
         <img className="w-44 h-44 self-start opacity-95" src={logo} alt="meditation application" />
         <div className="self-start mt-2" onClick={showMore}>
@@ -102,7 +107,7 @@ const Home = () => {
         </div>
       </header>
 
-      <main className="w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">
+      <main className="zIndex20 w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">
 
         <AudioItems styles="col-start-1 col-end-3" audioUrl={thunderAudio} imageUrl={thunder} imageSelectedUrl={thunderSelected} />
 

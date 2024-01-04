@@ -18,61 +18,62 @@ import animLottie from "../Assets/lottie/wave_motion.json";
 import logo from "../Assets/images/create_without_back.png";
 import bird from "../Assets/images/bird_grey.png";
 import birdSelected from "../Assets/images/bird_tor.png";
-import birdAudio from "/assets/audio/birds_sound.ogg";
 import bowl from "../Assets/images/bowl_grey.png";
 import bowlSelected from "../Assets/images/bowl_tor.png";
-import bowlAudio from "/assets/audio/singing_bowl.ogg";
 import cat from "../Assets/images/cat_grey.png";
 import catSelected from "../Assets/images/cat_tor.png";
-import catAudio from "/assets/audio/cat_purr_sound.ogg";
 import fire from "../Assets/images/fire_grey.png";
 import fireSelected from "../Assets/images/fire_tor.png";
-import fireAudio from "/assets/audio/fire_sound.ogg"
 import flow from "../Assets/images/flow_grey.png";
 import flowSelected from "../Assets/images/flow_tor.png";
-import flowAudio from "/assets/audio/flow_sound.ogg"
 import flute from "../Assets/images/flute_grey.png";
 import fluteSelected from "../Assets/images/flute_tor.png";
-import fluteAudio from "/assets/audio/flute_sound.ogg"
 import grass from "../Assets/images/grass_grey.png";
 import grassSelected from "../Assets/images/grass_tor.png";
-import grassAudio from "/assets/audio/grass_sound.ogg"
 import harp from "../Assets/images/harp_grey.png";
 import harpSelected from "../Assets/images/harp_tor.png";
-import harpAudio from "/assets/audio/harp_sound.ogg"
 import keyborad from "../Assets/images/keyboard_grey.png";
 import keyboradSelected from "../Assets/images/keyboard_tor.png";
-import keyboradAudio from "/assets/audio/keyboard_sound.ogg"
 import musicalNote from "../Assets/images/musical_note_grey.png";
 import musicalNoteSelected from "../Assets/images/musical_note_tor.png";
-import musicalNoteAudio from "/assets/audio/music_sound.ogg"
 import ocean from "../Assets/images/ocean_grey.png";
 import oceanSelected from "../Assets/images/ocean_tor.png";
-import oceanAudio from "/assets/audio/ocean_sound.ogg"
 import om from "../Assets/images/om_grey.png";
 import omSelected from "../Assets/images/om_tor.png";
-import omAudio from "/assets/audio/om_sound.ogg"
 import piano from "../Assets/images/piano_grey.png";
 import pianoSelected from "../Assets/images/piano_tor.png";
-import pianoAudio from "/assets/audio/piano_sound.ogg"
 import railway from "../Assets/images/railway_grey.png";
 import railwaySelected from "../Assets/images/railway_tor.png";
-import railwayAudio from "/assets/audio/rail_sound.ogg"
 import rainy from "../Assets/images/rainy_grey.png";
 import rainySelected from "../Assets/images/rainy_tor.png";
-import rainyAudio from "/assets/audio/rain_sound.ogg"
 import tabla from "../Assets/images/tabla_grey.png";
 import tablaSelected from "../Assets/images/tabla_tor.png";
-import tablaAudio from "/assets/audio/tabla_sound.ogg"
 import thunder from "../Assets/images/thunder_grey.png";
 import thunderSelected from "../Assets/images/thunder_tor.png";
-import thunderAudio from "/assets/audio/thunder_sound.ogg"
 import wind from "../Assets/images/wind_grey.png";
 import windSelected from "../Assets/images/wind_tor.png";
-import windAudio from "/assets/audio/wind_sound.ogg"
 import AudioItems from "../Components/AudioItems";
 
 const Home = () => {
+  const birdAudio = "https://meditation.arashaltafi.ir/audio_url/birds_sound.ogg";
+  const bowlAudio = "https://meditation.arashaltafi.ir/audio_url/singing_bowl.ogg";
+  const catAudio = "https://meditation.arashaltafi.ir/audio_url/cat_purr_sound.ogg";
+  const fireAudio = "https://meditation.arashaltafi.ir/audio_url/fire_sound.ogg";
+  const flowAudio = "https://meditation.arashaltafi.ir/audio_url/flow_sound.ogg";
+  const fluteAudio = "https://meditation.arashaltafi.ir/audio_url/flute_sound.ogg";
+  const grassAudio = "https://meditation.arashaltafi.ir/audio_url/grass_sound.ogg";
+  const harpAudio = "https://meditation.arashaltafi.ir/audio_url/harp_sound.ogg";
+  const musicalNoteAudio = "https://meditation.arashaltafi.ir/audio_url/music_sound.ogg";
+  const keyboradAudio = "https://meditation.arashaltafi.ir/audio_url/keyboard_sound.ogg";
+  const pianoAudio = "https://meditation.arashaltafi.ir/audio_url/piano_sound.ogg";
+  const railwayAudio = "https://meditation.arashaltafi.ir/audio_url/rail_sound.ogg";
+  const oceanAudio = "https://meditation.arashaltafi.ir/audio_url/ocean_sound.ogg";
+  const omAudio = "https://meditation.arashaltafi.ir/audio_url/om_sound.ogg";
+  const rainyAudio = "https://meditation.arashaltafi.ir/audio_url/rain_sound.ogg";
+  const tablaAudio = "https://meditation.arashaltafi.ir/audio_url/tabla_sound.ogg";
+  const thunderAudio = "https://meditation.arashaltafi.ir/audio_url/thunder_sound.ogg";
+  const windAudio = "https://meditation.arashaltafi.ir/audio_url/wind_sound.ogg";
+
   const location = useLocation();
   const dispatch = useDispatch();
   const bmiSelector = useSelector((state: any) => state.bmi);

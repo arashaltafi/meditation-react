@@ -2,11 +2,12 @@ import { useRef, useState } from 'react'
 
 interface AudioItemsProps {
     imageUrl: string,
+    imageSelectedUrl: string,
     audioUrl: string,
     styles: string
 }
 
-const AudioItems = ({ imageUrl, audioUrl, styles }: AudioItemsProps) => {
+const AudioItems = ({ imageUrl, imageSelectedUrl, audioUrl, styles }: AudioItemsProps) => {
     const audioRefs = useRef<HTMLAudioElement | null>(null);
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
     const [value, setValue] = useState<number>(0.5);
@@ -26,7 +27,7 @@ const AudioItems = ({ imageUrl, audioUrl, styles }: AudioItemsProps) => {
     return (
         <div className={`${styles} flex flex-col gap-y-6 sm:gap-y-8 items-center justify-center`}>
             <div onClick={toggleSound} className="bg-item">
-                <img src={imageUrl} alt="bird sound" />
+                <img src={`${isPlaying ? imageSelectedUrl : imageUrl}`} alt="bird sound" />
             </div>
             <input
                 className={`${isPlaying ? 'block' : 'hidden'}`}

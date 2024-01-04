@@ -32,6 +32,22 @@
   body {
     @apply bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100;
   }
+
+  ::-webkit-scrollbar {
+    @apply w-1 hidden sm:block;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-slate-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-900 dark:bg-slate-100 rounded-md;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-700 dark:bg-slate-300 rounded-sm;
+  }
 }
 
 @layer components {
@@ -104,10 +120,10 @@
   }
 
   .bg-action {
-    @apply w-12 h-12 sm:w-16 sm:h-16 bg-gray-300 dark:bg-gray-600 text-slate-800 dark:text-slate-100 p-2 sm:p-3 rounded-full transition cursor-pointer;
+    @apply w-8 h-8 sm:w-10 sm:h-10 self-start mt-2 transition delay-75 duration-200 cursor-pointer;
 
     &:hover {
-      @apply bg-gray-400 dark:bg-gray-700
+      @apply text-slate-800 dark:text-slate-100 p-0.5 sm:p-1 rounded-full bg-gray-400 dark:bg-gray-700
     }
 
     &:active {
@@ -130,7 +146,7 @@
   }
 
   .bg-item {
-    @apply bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 py-4 px-4 rounded-xl transition-all duration-75 ease-in select-none;
+    @apply flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 py-4 px-4 rounded-xl transition-all duration-100 delay-75 ease-in select-none;
 
     box-shadow: 1px 1px 10px #737373, -1px -1px 10px #adadad;
 
@@ -147,9 +163,12 @@
 
 
   input[type=range] {
-    @apply w-48 xl:w-[90%];
     -webkit-appearance: none;
     appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 8px;
+    outline: none;
   }
 
   input[type=range]:focus {
@@ -157,8 +176,6 @@
   }
 
   input[type=range]::-webkit-slider-runnable-track {
-    @apply w-48 xl:w-[90%];
-    height: 12.8px;
     cursor: pointer;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     background: #2196F3;
@@ -170,12 +187,11 @@
     @apply bg-slate-700 dark:bg-white;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     border: 0px solid #000000;
-    height: 20px;
-    width: 30px;
-    border-radius: 7px;
+    height: 10px;
+    width: 25px;
+    border-radius: 5px;
     cursor: pointer;
     -webkit-appearance: none;
-    margin-top: -3.6px;
   }
 
   input[type=range]:focus::-webkit-slider-runnable-track {
@@ -184,7 +200,6 @@
 
   input[type=range]::-moz-range-track {
     @apply w-48 xl:w-[90%];
-    height: 12.8px;
     cursor: pointer;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     background: #2196F3;
@@ -195,8 +210,6 @@
   input[type=range]::-moz-range-thumb {
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
     border-radius: 7px;
     background: #2196F3;
     cursor: pointer;
@@ -204,7 +217,6 @@
 
   input[type=range]::-ms-track {
     @apply w-48 xl:w-[90%];
-    height: 12.8px;
     cursor: pointer;
     background: transparent;
     border-color: transparent;
@@ -229,8 +241,6 @@
   input[type=range]::-ms-thumb {
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
     border-radius: 7px;
     background: #2196F3;
     cursor: pointer;
@@ -253,9 +263,6 @@
     padding-top: constant(safe-area-inset-top);
     padding-top: env(safe-area-inset-top);
     height: calc(100vh - (var(--safe-area-inset-top) + var(--safe-area-inset-bottom)));
-    overflow: hidden;
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    overflow-x: hidden;
   }
 }

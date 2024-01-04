@@ -3,8 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import ScrollToTop from "./Hoc/ScrollToTop";
 import Hoc from "./Hoc/Hoc";
 import Home from "./pages/Home";
-import Info from "./pages/Info";
-import Result from "./pages/Result";
 import NotFound from "./pages/NotFound";
 import './localiztion/i18nextSetting';
 import { useTranslation } from "react-i18next";
@@ -37,7 +35,7 @@ const App = () => {
   }, [])
 
   return (
-    <div className="w-full md:w-[70%] lg:w-1/2 xl:w-[50%] 2xl:w-[40%] h-screen mx-auto overflow-hidden ios-padding">
+    <div className="w-full md:w-[70%] lg:w-1/2 xl:w-[50%] 2xl:w-[40%] h-screen mx-auto overflow-x-hidden ios-padding select-none">
       {orientation ? (
         <p className="h1 w-full h-full flex items-center justify-center">{t('rotate')}</p>
       ) : (
@@ -45,8 +43,6 @@ const App = () => {
           <Route element={<ScrollToTop />}>
             <Route element={<Hoc />}>
               <Route path="/" element={<Home />} />
-              <Route path="/info" element={<Info />} />
-              <Route path="/result" element={<Result />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Route>

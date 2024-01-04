@@ -50,8 +50,10 @@ import tabla from "../Assets/images/tabla_grey.png";
 import tablaSelected from "../Assets/images/tabla_tor.png";
 import thunder from "../Assets/images/thunder_grey.png";
 import thunderSelected from "../Assets/images/thunder_tor.png";
+import thunderAudio from "../Assets/audio/thunder_sound.ogg"
 import wind from "../Assets/images/wind_grey.png";
 import windSelected from "../Assets/images/wind_tor.png";
+import AudioItems from "../Components/AudioItems";
 
 const Home = () => {
   const location = useLocation();
@@ -132,12 +134,7 @@ const Home = () => {
 
       <main className="w-full h-full grid grid-cols-6 gap-x-8 gap-y-12 items-start justify-center px-2 pt-4 pb-8">
 
-        <div className="col-start-1 col-end-3 flex flex-col gap-4 items-center justify-center">
-          <div className="bg-item">
-            <img src={thunder} alt="bird sound" />
-          </div>
-          <input type="range" />
-        </div>
+      <AudioItems audioUrl={thunderAudio} imageUrl={thunder} />
 
         <div className="col-start-3 col-end-5 flex flex-col gap-4 items-center justify-center">
           <div className="bg-item">

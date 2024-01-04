@@ -169,6 +169,7 @@
     height: 10px;
     border-radius: 8px;
     outline: none;
+    transform: rotate(180deg);
   }
 
   input[type=range]:focus {
